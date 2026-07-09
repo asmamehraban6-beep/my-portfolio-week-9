@@ -6,7 +6,7 @@ function Contact() {
       <h2>Contact Me</h2>
 
       <p>Email: asmamehraban@gmail.com</p>
-      <p>Phone: +93 795665288</p>
+      <p>Phone: +93 7956666666</p>
     </section>
   );
 }

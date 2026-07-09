@@ -1,0 +1,74 @@
+.live-preview {
+
+  width: 90%;
+
+  max-width: 800px;
+
+  margin: 60px auto;
+
+  text-align: center;
+
+}
+
+
+.live-preview h2 {
+
+  color: #00bfa6;
+
+  font-size: 36px;
+
+  margin-bottom: 30px;
+
+}
+
+
+
+.preview-card {
+
+  background: #111111;
+
+  padding: 35px;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(0,191,166,0.4);
+
+  box-shadow: 0 15px 35px rgba(0,191,166,0.15);
+
+  color: white;
+
+}
+
+
+
+.preview-card h3 {
+
+  color: #00bfa6;
+
+  font-size: 28px;
+
+}
+
+
+
+.preview-card p {
+
+  color: white;
+
+  font-size: 17px;
+
+  line-height: 1.8;
+
+}
+
+
+
+@media(max-width:768px){
+
+  .preview-card {
+
+    padding: 25px 15px;
+
+  }
+
+}

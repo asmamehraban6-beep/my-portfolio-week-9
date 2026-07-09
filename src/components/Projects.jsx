@@ -1,73 +1,202 @@
+import { useState } from "react";
 import "./Projects.css";
 
+
 function Projects() {
+
+
+  const [filter, setFilter] = useState("All");
+
+  const [selectedProject, setSelectedProject] = useState(null);
+
+
+
   const projects = [
+
     {
       id: 1,
-      name: "Portfolio Website",
-      description: "Personal portfolio built with React.",
-      image: "https://via.placeholder.com/150",
-      tech: ["React", "CSS"],
+      title: "Portfolio Website",
+      image: "🌐",
+      description: "A personal portfolio built with React.",
+      technology: "React",
       featured: true,
+      details: "A responsive developer portfolio with modern UI design."
     },
+
+
     {
       id: 2,
-      name: "Todo App",
-      description: "Simple task management app.",
-      image: "https://via.placeholder.com/150",
-      tech: ["JavaScript", "LocalStorage"],
+      title: "Todo App",
+      image: "✅",
+      description: "A task management application.",
+      technology: "JavaScript",
       featured: false,
+      details: "A simple application for managing daily tasks."
     },
+
+
     {
       id: 3,
-      name: "Weather App",
-      description: "Weather app using API.",
-      image: "https://via.placeholder.com/150",
-      tech: ["React", "API"],
-      featured: true,
-    },
+      title: "Landing Page",
+      image: "🎨",
+      description: "A responsive website design.",
+      technology: "CSS",
+      featured: false,
+      details: "A clean and responsive landing page design."
+    }
+
   ];
 
+
+
+  const filteredProjects =
+    filter === "All"
+      ? projects
+      : projects.filter(
+          (project) =>
+            project.technology === filter
+        );
+
+
+
   return (
-    <div className="projects-container">
-      <h2>My Projects</h2>
+
+    <section id="projects" className="projects">
+
+
+      <h2>
+        My Projects
+      </h2>
+
+
+
+      <div className="filter-buttons">
+
+
+        <button onClick={() => setFilter("All")}>
+          All
+        </button>
+
+
+        <button onClick={() => setFilter("React")}>
+          React
+        </button>
+
+
+        <button onClick={() => setFilter("JavaScript")}>
+          JavaScript
+        </button>
+
+
+        <button onClick={() => setFilter("CSS")}>
+          CSS
+        </button>
+
+
+      </div>
+
+
 
       <div className="projects-grid">
-        {projects.map((project) => (
-          <div key={project.id} className="project-card">
 
-            {/* ⭐ Featured Badge */}
-            {project.featured && <span className="badge">Featured</span>}
 
-            {/* 🖼️ IMAGE (اضافه شد) */}
-            <img
-              src={project.image}
-              alt={project.name}
-              className="project-img"
-            />
+        {
+          filteredProjects.map((project) => (
 
-            <h3>{project.name}</h3>
-            <p>{project.description}</p>
+            <div 
+              className="project-card" 
+              key={project.id}
+            >
 
-            {/* 🧩 Tech Stack */}
-            <div className="tech-stack">
-              {project.tech.map((item, index) => (
-                <span key={index} className="tech-badge">
-                  {item}
-                </span>
-              ))}
+
+              <h3>
+                {project.image} {project.title}
+              </h3>
+
+
+
+              {
+                project.featured && (
+
+                  <span className="badge">
+                    ⭐ Featured Project
+                  </span>
+
+                )
+              }
+
+
+
+              <p>
+                {project.description}
+              </p>
+
+
+
+              <p className="technology">
+                🛠 {project.technology}
+              </p>
+
+
+
+              <button
+                onClick={() =>
+                  setSelectedProject(project)
+                }
+              >
+                View Details
+              </button>
+
+
+
             </div>
 
-            {/* 🔗 LINK BUTTON (اضافه شد) */}
-            <a href="#" className="view-btn">
-              View Project
-            </a>
+          ))
+        }
 
-          </div>
-        ))}
+
       </div>
-    </div>
+
+
+
+
+      {
+        selectedProject && (
+
+         <div className="details-box">
+
+  <h3>
+    {selectedProject.image} {selectedProject.title}
+  </h3>
+
+
+  <p>
+    {selectedProject.description}
+  </p>
+
+
+  <p>
+    This project was built using <strong>{selectedProject.technology}</strong>.
+  </p>
+
+
+  <p>
+    {selectedProject.details}
+  </p>
+
+
+</div>
+
+        )
+      }
+
+
+
+    </section>
+
   );
+
 }
+
 
 export default Projects;

@@ -3,7 +3,7 @@ import "./Navbar.css";
 function Navbar() {
   return (
     <nav className="navbar">
-      <h2 className="logo">Asma</h2>
+      <h2 className="logo">AM</h2>
 
       <ul className="nav-links">
         <li>

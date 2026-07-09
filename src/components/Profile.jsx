@@ -12,6 +12,7 @@ function Profile() {
 
       <h2>Asma Mehraban</h2>
       <p>Frontend Developer | React Learner | Building clean UI experiences</p>
+      
 
     </div>
   );

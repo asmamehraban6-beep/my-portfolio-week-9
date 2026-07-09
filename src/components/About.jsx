@@ -1,32 +1,53 @@
 import { useState } from "react";
 import "./About.css";
 
-function About({ title, description }) {
-  const [showMore, setShowMore] = useState(false);
 
-  const hobbies = ["Coding", "Reading", "Design", "Gaming"];
+function About() {
+
+  const [reaction, setReaction] = useState("👋 Hello!");
+
+
+  const changeReaction = () => {
+
+    setReaction("😊 Thanks for visiting my portfolio!");
+
+  };
+
 
   return (
-    <div className="about-container">
-      <h2>{title}</h2>
+
+    <section id="about" className="about">
+
+      <h2>
+        About Me
+      </h2>
+
+
+      <div
+        onClick={changeReaction}
+        className="about-icon"
+      >
+        👩‍💻
+      </div>
+
+
+      <h3>
+        {reaction}
+      </h3>
+
 
       <p>
-        {showMore ? description : description.slice(0, 80) + "..."}
+        I am an aspiring React developer and Health Science student.
+        I enjoy building responsive websites, learning modern technologies,
+        and creating creative digital experiences.
       </p>
 
-      {/* 🧩 Hobbies list */}
-      <ul>
-        {hobbies.map((hobby, index) => (
-          <li key={index}>{hobby}</li>
-        ))}
-      </ul>
 
-      {/* 🔘 Button */}
-      <button onClick={() => setShowMore(!showMore)}>
-        {showMore ? "Show Less" : "Show More"}
-      </button>
-    </div>
+    </section>
+
   );
+
 }
+
 
 export default About;
