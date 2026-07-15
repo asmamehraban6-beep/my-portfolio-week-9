@@ -4,12 +4,12 @@ import Navbar from "./components/Navbar";
 import ThemeToggle from "./components/ThemeToggle";
 
 import Home from "./pages/Home";
-import About from "./pages/About";
 import Projects from "./pages/Projects";
+import ProjectDetails from "./pages/ProjectDetails";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import ProjectDetails from "./pages/ProjectDetails";
-import Skills from "./components/Skills";
+import Footer from "./components/Footer";
+
 import "./App.css";
 
 
@@ -19,30 +19,49 @@ function App() {
 
     <div className="app">
 
+
       <Navbar />
 
- <Routes>
 
-  <Route path="/" element={<Home />} />
+      <Routes>
 
-  <Route path="/about" element={<About />} />
 
-  <Route path="/skills" element={<Skills />} />
+        <Route
+          path="/"
+          element={<Home />}
+        />
 
-  <Route path="/projects" element={<Projects />} />
 
-  <Route 
-    path="/projects/:id" 
-    element={<ProjectDetails />} 
-  />
+        <Route
+          path="/projects"
+          element={<Projects />}
+        />
 
-  <Route path="/contact" element={<Contact />} />
 
-  <Route path="*" element={<NotFound />} />
+        <Route
+          path="/projects/:id"
+          element={<ProjectDetails />}
+        />
 
-</Routes>
+
+        <Route
+          path="/contact"
+          element={<Contact />}
+        />
+
+
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
+
+
+      </Routes>
+
+      <Footer /> 
 
       <ThemeToggle />
+
 
     </div>
 

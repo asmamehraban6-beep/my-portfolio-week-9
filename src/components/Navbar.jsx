@@ -4,21 +4,23 @@ import "./Navbar.css";
 
 function Navbar() {
 
-
   return (
 
     <nav className="navbar">
+
 
       <h2 className="logo">
         AM
       </h2>
 
 
+
       <ul className="nav-links">
+
 
         <li>
 
-          <NavLink 
+          <NavLink
             to="/"
             className={({ isActive }) =>
               isActive ? "active" : ""
@@ -30,18 +32,17 @@ function Navbar() {
         </li>
 
 
+
+
         <li>
 
-          <NavLink
-            to="/about"
-            className={({ isActive }) =>
-              isActive ? "active" : ""
-            }
-          >
+          <a href="/#about">
             About
-          </NavLink>
+          </a>
 
         </li>
+
+
 
 
         <li>
@@ -58,6 +59,8 @@ function Navbar() {
         </li>
 
 
+
+
         <li>
 
           <NavLink
@@ -72,7 +75,9 @@ function Navbar() {
         </li>
 
 
+
       </ul>
+
 
 
     </nav>

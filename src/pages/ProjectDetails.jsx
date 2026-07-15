@@ -1,30 +1,10 @@
 import { useParams, Link } from "react-router-dom";
+import projects from "../data/projects";
 
 
 function ProjectDetails() {
 
   const { id } = useParams();
-
-
-  const projects = [
-    {
-      id: "1",
-      title: "Portfolio Website",
-      description: "A personal portfolio built with React."
-    },
-
-    {
-      id: "2",
-      title: "Todo App",
-      description: "A task management application."
-    },
-
-    {
-      id: "3",
-      title: "Landing Page",
-      description: "A responsive website design."
-    }
-  ];
 
 
   const project = projects.find(
@@ -33,36 +13,98 @@ function ProjectDetails() {
 
 
   if (!project) {
+
     return (
+
       <div>
-        <h2>Project Not Found</h2>
+
+        <h2>
+          Project Not Found
+        </h2>
+
+
         <Link to="/projects">
-          Back to Projects
+
+          <button>
+            Back to Projects
+          </button>
+
         </Link>
+
       </div>
+
     );
+
   }
 
 
+
   return (
-    <section>
+
+    <section className="project-details">
+
 
       <h1>
-        {project.title}
+        {project.image} {project.title}
       </h1>
+
 
       <p>
         {project.description}
       </p>
 
 
-      <Link to="/projects">
+      <p>
+        <strong>Status:</strong> {project.status}
+      </p>
+
+
+      <p>
+        <strong>Technologies:</strong>{" "}
+        {project.technology.join(", ")}
+      </p>
+
+
+      <p>
+        <strong>Details:</strong> {project.details}
+      </p>
+
+
+      <p>
+        <strong>Progress:</strong> {project.progress}%
+      </p>
+
+
+
+      <a
+        href={project.github}
+        target="_blank"
+        rel="noreferrer"
+      >
+
         <button>
-          Back
+          View GitHub
         </button>
+
+      </a>
+
+
+
+      <br /><br />
+
+
+
+      <Link to="/projects">
+
+        <button>
+          Back to Projects
+        </button>
+
       </Link>
 
+
     </section>
+
   );
 
 }

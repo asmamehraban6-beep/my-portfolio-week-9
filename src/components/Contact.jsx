@@ -1,90 +1,23 @@
-import { useState } from "react";
-import "./Contact.css";
 
 
 function Contact() {
 
-  const [message, setMessage] = useState(false);
-
-
-  const handleSubmit = (e) => {
-
-    e.preventDefault();
-
-    setMessage(true);
-
-  };
-
-
   return (
 
-    <section id="contact" className="contact">
+    <div>
 
-      <h2>
-        Contact Me
-      </h2>
-
+      <h1>
+        Contact Page Test
+      </h1>
 
       <p>
-        Feel free to contact me for projects or collaborations.
+        This is my contact page.
       </p>
 
-
-      <form onSubmit={handleSubmit} className="contact-form">
-
-
-        <input
-          type="text"
-          placeholder="Your Name"
-          required
-        />
-
-
-        <input
-          type="email"
-          placeholder="Your Email"
-          required
-        />
-
-
-        <textarea
-          placeholder="Your Message"
-          required
-        />
-
-
-        <button type="submit">
-          Send Message
-        </button>
-
-
-      </form>
-
-
-      {message && (
-
-        <p>
-          ✅ Message sent successfully!
-        </p>
-
-      )}
-
-
-      <div>
-
-        <p>
-          📧 Email: asmamehraban@gmail.com
-        </p>
-
-
-      </div>
-
-
-    </section>
+    </div>
 
   );
 
 }
-
 
 export default Contact;

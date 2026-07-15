@@ -166,3 +166,63 @@
   }
 
 }
+
+/* Light Mode */
+
+body.light .feedback-wall {
+
+  background: #ffffff;
+
+  color: #111;
+
+}
+
+
+
+body.light .feedback-wall h2 {
+
+  color: #0F9D7A;
+
+}
+
+
+
+body.light .feedback-wall input,
+body.light .feedback-wall textarea,
+body.light .feedback-wall select {
+
+  background: #f5f5f5;
+
+  color: #111;
+
+  border: 1px solid #0F9D7A;
+
+}
+
+
+
+body.light .feedback-card {
+
+  background: #ffffff;
+
+  color: #111;
+
+  border: 1px solid rgba(15,157,122,0.3);
+
+}
+
+
+
+body.light .feedback-card h3 {
+
+  color: #0F9D7A;
+
+}
+
+
+
+body.light .feedback-card span {
+
+  color: #6B8E23;
+
+}

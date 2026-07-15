@@ -1,23 +1,44 @@
 import Header from "../components/Header";
-import Profile from "../components/Profile";
+import TypingAnimation from "../components/TypingAnimation";
 import About from "../components/About";
 import Skills from "../components/Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
-import Footer from "../components/Footer";
+
 
 function Home() {
+
+
   return (
+
+
     <>
+
+
       <Header />
-      <Profile />
+
+      <TypingAnimation />
+
+
       <About />
+
+
       <Skills />
+
+
       <Projects />
-      <Contact />
-      <Footer />
+
+<Contact />
+  
+
+
+
     </>
+
+
   );
+
 }
+
 
 export default Home;
