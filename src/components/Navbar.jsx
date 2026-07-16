@@ -36,9 +36,14 @@ function Navbar() {
 
         <li>
 
-          <a href="/#about">
-            About
-          </a>
+        <NavLink
+  to="/about"
+  className={({ isActive }) =>
+    isActive ? "active" : ""
+  }
+>
+  About
+</NavLink>
 
         </li>
 

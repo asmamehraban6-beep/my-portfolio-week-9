@@ -9,6 +9,7 @@ import ProjectDetails from "./pages/ProjectDetails";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Footer from "./components/Footer";
+import About from "./pages/About";
 
 import "./App.css";
 
@@ -30,7 +31,16 @@ function App() {
           path="/"
           element={<Home />}
         />
+       
+        <Route
+  path="/"
+  element={<Home />}
+/>
 
+<Route
+  path="/about"
+  element={<About />}
+/>
 
         <Route
           path="/projects"
